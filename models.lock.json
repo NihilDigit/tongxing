@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "artifacts": [
+    {
+      "group": "vision",
+      "name": "midas-midas-v2-w8a8.tflite",
+      "sha256": "7d83e5dfe067bb261d298c234c04a169a93349a35d464ffe2b4f90c111e8280e",
+      "size": 17749000,
+      "destination": "app/src/main/assets/midas-midas-v2-w8a8.tflite",
+      "source_page": "https://aihub.qualcomm.com/models/midas",
+      "url": "https://huggingface.co/qualcomm/Midas-V2/resolve/2ee2b19f168fe49fe76432be0c7ba62cab64169e/Midas-V2_w8a8.tflite"
+    },
+    {
+      "group": "vision",
+      "name": "yolox-yolo-x-w8a8.tflite",
+      "sha256": "c162b8598835ac61e64919003b191b9e21328232d85f0e61aba0158b0268e61d",
+      "size": 9404056,
+      "destination": "app/src/main/assets/yolox-yolo-x-w8a8.tflite",
+      "source_page": "https://aihub.qualcomm.com/models/yolox",
+      "url": "https://huggingface.co/qualcomm/Yolo-X/resolve/b05fe4ec964bad71076f01470c8351eb785c37ea/Yolo-X_w8a8.tflite"
+    },
+    {
+      "group": "vision",
+      "name": "ffnet_78s_lowres-ffnet-78s-lowres-w8a8.tflite",
+      "sha256": "6bd68a2b0419ff5ad6bbd90ea3c82589fa4a61e6ad59740cf45d8381948546f1",
+      "size": 27303320,
+      "destination": "app/src/main/assets/ffnet_78s_lowres-ffnet-78s-lowres-w8a8.tflite",
+      "source_page": "https://aihub.qualcomm.com/models/ffnet_78s_lowres",
+      "url": "https://huggingface.co/qualcomm/FFNet-78S-LowRes/resolve/4a508b11f166afa62364c26b97895c158c81e681/FFNet-78S-LowRes_w8a8.tflite"
+    },
+    {
+      "group": "vision",
+      "name": "mobilenet_v2_feature_extractor_w8a8.tflite",
+      "sha256": "803e2f2d10ea918a5da30fe9346fe2d2492d58f6901aa2d51e48bc7d21184a36",
+      "size": 2710208,
+      "destination": "app/src/main/assets/mobilenet_v2_feature_extractor_w8a8.tflite",
+      "source_page": "https://aihub.qualcomm.com/models/mobilenet_v2",
+      "recipe": "mobilenet-features-v1",
+      "source_artifact": "mobilenet_v2-mobilenet-v2-w8a8.tflite"
+    },
+    {
+      "group": "asr",
+      "name": "model.int8.onnx",
+      "sha256": "90bc03034ae1bef9575f8cc798cd1519c8be8aa9e8b458a033e32017ff4d584c",
+      "size": 227330205,
+      "destination": "app/src/main/assets/sherpa-onnx-paraformer-zh-2024-03-09/model.int8.onnx",
+      "url": "https://huggingface.co/csukuangfj/sherpa-onnx-paraformer-zh-2024-03-09/resolve/906992d326ebf0c5171cde675aa0902be9e5bc6c/model.int8.onnx"
+    },
+    {
+      "group": "asr",
+      "name": "tokens.txt",
+      "sha256": "6c0e3b35cece259829e6cb5b8d90d13db88f61ea3a2953d11898e4b2bfd7a2e2",
+      "size": 75354,
+      "destination": "app/src/main/assets/sherpa-onnx-paraformer-zh-2024-03-09/tokens.txt",
+      "url": "https://huggingface.co/csukuangfj/sherpa-onnx-paraformer-zh-2024-03-09/resolve/906992d326ebf0c5171cde675aa0902be9e5bc6c/tokens.txt"
+    },
+    {
+      "group": "asr",
+      "name": "test_wavs/0.wav",
+      "sha256": "668bf8df51a10027b84d5d8816a1ce11ae93545538dc05cfe2aa6811d399c250",
+      "size": 179646,
+      "destination": "app/src/main/assets/sherpa-onnx-paraformer-zh-2024-03-09/test_wavs/0.wav",
+      "url": "https://huggingface.co/csukuangfj/sherpa-onnx-paraformer-zh-2024-03-09/resolve/906992d326ebf0c5171cde675aa0902be9e5bc6c/test_wavs/0.wav"
+    },
+    {
+      "group": "llm",
+      "name": "Qwen3-1.7B-Q4_0-pure.gguf",
+      "sha256": "3fe077cdcf327a136c9201123601e87f652ca43b83ac1e2ca251305248c6cc58",
+      "size": 974201152,
+      "destination": "build/models/Qwen3-1.7B-Q4_0-pure.gguf",
+      "url": "https://modelscope.cn/models/nihildigit/Qwen3-1.7B-GGUF-Q4_0-Pure/resolve/master/Qwen3-1.7B-Q4_0-pure.gguf"
+    },
+    {
+      "group": "feature-source",
+      "name": "mobilenet_v2-mobilenet-v2-w8a8.tflite",
+      "sha256": "9b7c4606b5ee40b7e1a7426df439f5d5a8a631741f811dea7db02927e3b3704d",
+      "size": 3994760,
+      "destination": "build/model-inputs/mobilenet_v2-mobilenet-v2-w8a8.tflite",
+      "source_page": "https://aihub.qualcomm.com/models/mobilenet_v2",
+      "url": "https://huggingface.co/qualcomm/MobileNet-v2/resolve/80d67c865d9e89baa226d3b03f3e7929a7e384cf/MobileNet-v2_w8a8.tflite"
+    }
+  ]
+}

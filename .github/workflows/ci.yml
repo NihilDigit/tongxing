@@ -1,0 +1,54 @@
+name: Build and test
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          enable-cache: false
+      - name: Prepare SDK and source dependencies
+        run: |
+          SDK_ROOT="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          echo "ANDROID_HOME=$SDK_ROOT" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$SDK_ROOT" >> "$GITHUB_ENV"
+          SDKMANAGER="$(command -v sdkmanager || ls "$SDK_ROOT"/cmdline-tools/*/bin/sdkmanager | sort -V | tail -n 1)"
+          (yes || true) | "$SDKMANAGER" --licenses > /dev/null
+          (yes || true) | "$SDKMANAGER" "platforms;android-36" "build-tools;35.0.0" "build-tools;36.0.0" "ndk;27.0.12077973" "ndk;29.0.14206865" "cmake;3.22.1" > /dev/null
+          uv run scripts/prepare_source_dependencies.py
+          uv run scripts/prepare_android_dependencies.py
+          chmod +x gradlew
+      - name: Build and run unit tests
+        run: ./gradlew :app:assembleDebug :app:assembleDebugAndroidTest :app:generateReleaseBuildConfig :lightway_agentcore:android:agentcore:testDebugUnitTest :lightway_safetycore:safetycore-core:testDebugUnitTest --no-daemon
+  native:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Prepare native toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake ninja-build g++
+      - name: Run native regression
+        run: |
+          cmake -S lightway_safetycore/safetycore-core/src/test/cpp -B build/native-tests -G Ninja -DCMAKE_BUILD_TYPE=Release
+          cmake --build build/native-tests
+          ctest --test-dir build/native-tests --output-on-failure
+  models:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          python-version: '3.12'
+          enable-cache: false
+      - name: Verify vision model preparation and feature export
+        run: uv run scripts/prepare_models.py --group vision

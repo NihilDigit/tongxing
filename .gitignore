@@ -1,0 +1,16 @@
+.gradle/
+.kotlin/
+**/build/
+**/.cxx/
+**/.externalNativeBuild/
+local.properties
+.env
+*.jks
+*.keystore
+*.log
+.idea/
+app/libs/
+app/src/main/assets/
+third_party/llama.cpp/
+__pycache__/
+.ruff_cache/

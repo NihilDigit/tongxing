@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- This preferences file contains the user's cloud API key. -->
+    <exclude domain="sharedpref" path="lightway_prefs.xml"/>
+</full-backup-content>

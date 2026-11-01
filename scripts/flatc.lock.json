@@ -1,0 +1,29 @@
+{
+  "version": "25.2.10",
+  "platforms": {
+    "Windows/AMD64": {
+      "url": "https://github.com/google/flatbuffers/releases/download/v25.2.10/Windows.flatc.binary.zip",
+      "archive_sha256": "bd9b3cb6bf5ab8009f1927b6e00207db968c3d5c93e3bc215dae084cc681249a",
+      "binary_sha256": "1688ff18cb5368133cbdf1e100d6992c33eb64733cdfdddec122cff447df811a",
+      "member": "flatc.exe"
+    },
+    "Linux/x86_64": {
+      "url": "https://github.com/google/flatbuffers/releases/download/v25.2.10/Linux.flatc.binary.g%2B%2B-13.zip",
+      "archive_sha256": "6f01258d7475806f375d6da66a61df47add8016edd73f1774673f37b80b9a711",
+      "binary_sha256": "79722d4ba7db479fa78dc966cbcf7cc601293d97c2776ab02847b5cad46357f8",
+      "member": "flatc"
+    },
+    "Darwin/arm64": {
+      "url": "https://github.com/google/flatbuffers/releases/download/v25.2.10/Mac.flatc.binary.zip",
+      "archive_sha256": "eabd8e8c4d8b9381b7ea4c6324c629f9200d8bb73f94b6b28ef406efc8c06c62",
+      "binary_sha256": "f004709c0334edb3cdc0430395b9de1dc071f3618fc4ba43674c3c61201037ac",
+      "member": "flatc"
+    },
+    "Darwin/x86_64": {
+      "url": "https://github.com/google/flatbuffers/releases/download/v25.2.10/MacIntel.flatc.binary.zip",
+      "archive_sha256": "c0d5142c465809b92fbe1eb1fd528e418de53da9de69bbb078df3fcf7443fee0",
+      "binary_sha256": "dfd2f0f0595ea362bd337bc556aa813287cc21dc07d8a4aa466280b85fa68c4a",
+      "member": "flatc"
+    }
+  }
+}
